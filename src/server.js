@@ -34,7 +34,7 @@ app.use('/cart', cart)
 app.use('/wishlist', wishlist)
 app.use('/catalog', catalog)
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('test cloud run')
 })
 
 app.get('/protected', authenticate, (req, res) => {
