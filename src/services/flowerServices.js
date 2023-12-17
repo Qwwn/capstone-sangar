@@ -347,7 +347,7 @@ class FlowerServices {
       formData.append('image', stream, { filename: file.name })
     
       // Make the HTTP request using axios and the FormData object
-      const predictionResponse = await axios.post('https://ml-predict-casptone-m7kn4aeh5a-as.a.run.app/prediction', formData, {
+      const predictionResponse = await axios.post('https://ml-bloommate-capstone-m7kn4aeh5a-as.a.run.app', formData, {
         headers: {
           ...formData.getHeaders()
         },
