@@ -1,4 +1,4 @@
-FROM node:16
+FROM node:21-slim
 
 WORKDIR /usr/src/app
 
@@ -6,6 +6,6 @@ COPY package*.json ./
 
 RUN npm install
 
-COPY . .
+COPY . ./
 
-CMD node src/server.js
+ENTRYPOINT [ "node", "src/server.js" ]

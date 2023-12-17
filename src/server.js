@@ -16,9 +16,10 @@ const cart = require('./api/cart')
 const wishlist = require('./api/wishlist')
 const catalog = require('./api/catalog')
 
-dotenv.config({ path: '.env.development' })
-const host = process.env.HOST || localhost
-const port = process.env.port || 8080
+const PORT = process.env.PORT || 8080
+app.listen(PORT, () => {
+  console.log(`App listening on port ${PORT}`)
+})
 
 app.use(cors())
 app.use(bodyParser.json())
@@ -40,6 +41,3 @@ app.get('/protected', authenticate, (req, res) => {
   res.json({ message: 'This is a protected route', user: req.user })
 })
 
-app.listen(port, () => {
-  console.log(`App listening on http://${host}:${port}`)
-})
