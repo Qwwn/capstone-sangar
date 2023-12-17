@@ -17,8 +17,8 @@ const wishlist = require('./api/wishlist')
 const catalog = require('./api/catalog')
 
 dotenv.config({ path: '.env.development' })
-const host = process.env.HOST
-const port = process.env.port || 3000
+const host = process.env.HOST || localhost
+const port = process.env.port || 8080
 
 app.use(cors())
 app.use(bodyParser.json())
