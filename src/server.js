@@ -16,9 +16,9 @@ const cart = require('./api/cart')
 const wishlist = require('./api/wishlist')
 const catalog = require('./api/catalog')
 
-const PORT = process.env.PORT || 8080
-app.listen(PORT, () => {
-  console.log(`App listening on port ${PORT}`)
+const port = parseInt(process.env.PORT) || 8080
+app.listen(port, () => {
+  console.log(`App listening on port ${port}`)
 })
 
 app.use(cors())
@@ -40,4 +40,3 @@ app.get('/', (req, res) => {
 app.get('/protected', authenticate, (req, res) => {
   res.json({ message: 'This is a protected route', user: req.user })
 })
-

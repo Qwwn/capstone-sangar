@@ -1,4 +1,4 @@
-FROM node:21-slim
+FROM node:18-slim as dependencies
 
 WORKDIR /usr/src/app
 
@@ -8,4 +8,8 @@ RUN npm install
 
 COPY . ./
 
-ENTRYPOINT [ "node", "src/server.js" ]
+FROM dependencies
+
+RUN npm run build
+EXPOSE 3000
+CMD npm run start
